@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wolf Rokoko ArmChair — En'Decore</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="ar.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+<div id="page-loader"><div class="loader-brand">En'<span>Decore</span></div><div class="loader-bar"></div></div>
+<div class="toast"></div>
+
+<header class="site-header">
+  <div class="navbar">
+    <div class="logo"><a href="index.html">En'<span>Decore</span></a></div>
+    <nav><ul id="MenuItems">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Collection</a></li>
+      <li><a href="about.html">Maison</a></li>
+      <li><a href="blogs.html">Journal</a></li>
+      <li><a href="contactus.html">Contact</a></li>
+      <li><a href="faq2.html">FAQ</a></li>
+    </ul></nav>
+    <div class="nav-icons">
+      <span class="user-welcome"></span>
+      <button class="nav-icon-btn" onclick="window.location='account.html'"><i class="fa-regular fa-user"></i></button>
+      <button class="nav-icon-btn" onclick="window.location='cart.html'"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count" style="display:none">0</span></button>
+      <button class="nav-icon-btn menu-icon"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="product-detail-section page-enter">
+  <div class="small-container">
+    <div class="product-detail-grid">
+
+      <!-- Gallery -->
+      <div>
+                                <div class="product-gallery-main">
+          <img src="images\wolfrokoko5.png" alt="" id="mainImg"/>
+        </div>
+        <div class="product-gallery-thumbs">
+          <div class="thumb-col" onclick="swapImg('images/wolfrokoko4.png',this)" title="Main View" style="cursor:pointer">
+            <img src="images\wolfrokoko4.png" alt="Main View" loading="lazy"/>
+          </div>
+          <div class="thumb-col" onclick="swapImg('images/wolfrokoko3.png',this)" title="Lounge View" style="cursor:pointer">
+            <img src="images\wolfrokoko3.png" alt="Lounge View" loading="lazy"/>
+          </div>
+          <div class="thumb-col" onclick="swapImg('images/wolfrokoko2.png',this)" title="Front View" style="cursor:pointer">
+            <img src="images\wolfrokoko2.png" alt="Front View" loading="lazy"/>
+          </div>
+          <div class="thumb-col" onclick="swapImg('images/wolfrokoko1.png',this)" title="Side View" style="cursor:pointer">
+            <img src="images\wolfrokoko1.png" alt="Side View" loading="lazy"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="product-detail-info">
+        <p class="product-detail-breadcrumb">
+          <a href="index.html">Home</a> &nbsp;/&nbsp;
+          <a href="products.html">Collection</a> &nbsp;/&nbsp;
+          Armchairs
+        </p>
+        <h1 class="product-detail-name">Wolf Rokoko ArmChair</h1>
+        <div class="product-rating" style="margin:12px 0;">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+          <span style="font-size:0.72rem;color:var(--soft);margin-left:8px;">38 reviews</span>
+        </div>
+        <div class="product-detail-price">₹2,150</div>
+        <div class="product-detail-divider"></div>
+        <p class="product-detail-desc">This armchair is a part of an exquisite contemporary designer collection, highly figured and high profiled to add comfort and elegance to your home. It is a high-end modern design armchair with a fully upholstered seat and backrest. The sturdy base frame and nickel matt finish metal legs give it an aesthetic charm. A fascinating premium velvet armchair to accent your space with a simple smooth touch.</p>
+
+        <label class="product-select-label">Select Finish</label>
+        <select class="product-detail-select">
+          <option value="">Choose an option</option>
+          <option value="Cobalt Velvet">Cobalt Velvet</option>
+<option value="Emerald Green">Emerald Green</option>
+<option value="Blush Pink">Blush Pink</option>
+<option value="Dusty Mauve">Dusty Mauve</option>
+<option value="Midnight Black">Midnight Black</option>
+        </select>
+
+        <div class="product-qty-row">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <input class="qty-input" type="number" id="qtyInput" value="1" min="1"/>
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+          <span style="font-size:0.72rem;color:var(--soft);margin-left:8px;">In Stock</span>
+        </div>
+
+        <div class="product-action-btns">
+          <button class="btn btn-filled" id="addCartBtn" onclick="handleAddToCart()">
+            Add to Cart &nbsp;<i class="fa-solid fa-bag-shopping" style="font-size:0.75rem;"></i>
+          </button>
+          <button class="ar-detail-btn" onclick="openVectary('wolf-rokoko')">
+            <i class="fa-solid fa-cube"></i> &nbsp; View in 3D / AR
+          </button>
+        </div>
+
+        <div class="product-features">
+          <div class="feature-item"><i class="fa-solid fa-truck-fast"></i><span>Complimentary white-glove delivery within 7–10 business days</span></div>
+          <div class="feature-item"><i class="fa-solid fa-rotate-left"></i><span>30-day returns — no questions asked</span></div>
+          <div class="feature-item"><i class="fa-solid fa-shield-halved"></i><span>5-year structural warranty on all pieces</span></div>
+          <div class="feature-item"><i class="fa-solid fa-leaf"></i><span>Sustainably sourced and certified materials</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Related Products -->
+<section style="padding:60px 0 100px;background:var(--cream);">
+  <div class="small-container">
+    <div class="section-header" style="padding-top:0;">
+      <span class="section-eyebrow">You May Also Like</span>
+      <h2 class="section-title">Related Pieces</h2>
+      <span class="gold-line"></span>
+    </div>
+    <div class="products-row">
+      
+      <div class="product-card">
+        <div class="product-card-image">
+          <img src="images\6tgfvw6d.png" alt="Armchair Patricia" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80'"/>
+          <div class="product-card-overlay"><a href="pd_armchair.html" class="btn">View Piece</a></div>
+          <button class="ar-quick-btn" onclick="event.stopPropagation();openAR('armchair-patricia','Armchair Patricia')" title="View in AR"><i class="fa-solid fa-cube"></i></button>
+        </div>
+        <div class="product-card-info">
+          <p class="product-category">Armchair</p>
+          <h4 class="product-name">Armchair Patricia</h4>
+          <p class="product-price">₹2,299</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-image">
+          <img src="images\futon1.png" alt="Futon Armchair" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80'"/>
+          <div class="product-card-overlay"><a href="pd_futon.html" class="btn">View Piece</a></div>
+          <button class="ar-quick-btn" onclick="event.stopPropagation();openAR('futon-armchair','Futon Armchair')" title="View in AR"><i class="fa-solid fa-cube"></i></button>
+        </div>
+        <div class="product-card-info">
+          <p class="product-category">Armchair</p>
+          <h4 class="product-name">Futon Armchair</h4>
+          <p class="product-price">₹2,299</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-image">
+          <img src="images\toskaarm2.png" alt="Toska ArmChair" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80'"/>
+          <div class="product-card-overlay"><a href="pd_toska-armchair.html" class="btn">View Piece</a></div>
+          <button class="ar-quick-btn" onclick="event.stopPropagation();openAR('toska-armchair','Toska ArmChair')" title="View in AR"><i class="fa-solid fa-cube"></i></button>
+        </div>
+        <div class="product-card-info">
+          <p class="product-category">Armchair</p>
+          <h4 class="product-name">Toska ArmChair</h4>
+          <p class="product-price">₹2,350</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-image">
+          <img src="images\gallery-1.jpg" alt="Brown ArmChair" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80'"/>
+          <div class="product-card-overlay"><a href="pd_armchair2.html" class="btn">View Piece</a></div>
+          <button class="ar-quick-btn" onclick="event.stopPropagation();openAR('brown-armchair','Brown ArmChair')" title="View in AR"><i class="fa-solid fa-cube"></i></button>
+        </div>
+        <div class="product-card-info">
+          <p class="product-category">Armchair</p>
+          <h4 class="product-name">Brown ArmChair</h4>
+          <p class="product-price">₹2,250</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand-name">En'<span>Decore</span></div><p class="footer-desc">A maison of distinguished furniture crafted for refined living.</p><div class="footer-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+      <div class="footer-col"><h4>Collection</h4><ul><li><a href="products.html">All Pieces</a></li><li><a href="products.html">Armchairs</a></li><li><a href="products.html">Sofas</a></li><li><a href="products.html">Tables</a></li></ul></div>
+      <div class="footer-col"><h4>Maison</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="blogs.html">Journal</a></li><li><a href="contactus.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="account.html">My Account</a></li><li><a href="cart.html">My Cart</a></li><li><a href="#">Return Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copyright">© 2025 En'Decore. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="firebase.js"></script>
+<script src="ar.js"></script>
+<script>
+function swapImg(src,el){
+  document.getElementById('mainImg').src=src;
+  document.querySelectorAll('.thumb-col').forEach(t=>t.style.borderColor='transparent');
+  el.style.borderColor='var(--gold)';
+}
+function changeQty(delta){
+  const i=document.getElementById('qtyInput');
+  i.value=Math.max(1,parseInt(i.value||1)+delta);
+}
+async function handleAddToCart(){
+  const btn=document.getElementById('addCartBtn');
+  btn.innerHTML='Adding… <i class="fa-solid fa-spinner fa-spin" style="font-size:0.75rem;"></i>';
+  btn.disabled=true;
+  await addToCart({
+    id:'wolf-rokoko',
+    name:'Wolf Rokoko ArmChair',
+    price:2150,
+    qty:parseInt(document.getElementById('qtyInput').value)||1,
+    category:'Armchair',
+    image:'images/wolfrokoko5.png'
+  });
+  btn.innerHTML='Add to Cart &nbsp;<i class="fa-solid fa-bag-shopping" style="font-size:0.75rem;"></i>';
+  btn.disabled=false;
+}
+</script>
+
+<div id="vectary-modal-wolf-rokoko" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;">
+  <div style="position:relative;width:90%;max-width:900px;height:80vh;background:#fff;">
+    <button onclick="document.getElementById('vectary-modal-wolf-rokoko').style.display='none'" 
+      style="position:absolute;top:10px;right:10px;z-index:10;background:#1c1c1c;color:#fff;border:none;width:36px;height:36px;cursor:pointer;font-size:1.2rem;">✕</button>
+    <iframe id="vectary-iframe-wolf-rokoko" src="" width="100%" height="100%" frameborder="0" allowfullscreen style="display:block;"></iframe>
+  </div>
+</div>
+<script>
+function openVectary(pid) {
+  const modal = document.getElementById('vectary-modal-' + pid);
+  const iframe = document.getElementById('vectary-iframe-' + pid);
+  const urls = {
+    'wolf-rokoko': 'https://www.vectary.com/viewer/v1/?model=078d7a16-8cf3-427f-b547-b2106a2043f9&env=studio3'
+  };
+  iframe.src = urls[pid] || '';
+  modal.style.display = 'flex';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Collection — En'Decore</title>
+  <link rel="stylesheet" href="style.css"/><link rel="stylesheet" href="ar.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+<div id="page-loader"><div class="loader-brand">En'<span>Decore</span></div><div class="loader-bar"></div></div>
+<div class="toast"></div>
+<header class="site-header">
+  <div class="navbar">
+    <div class="logo"><a href="index.html">En'<span>Decore</span></a></div>
+    <nav><ul id="MenuItems">
+      <li><a href="index.html">Home</a></li><li><a href="products.html">Collection</a></li>
+      <li><a href="about.html">Maison</a></li><li><a href="blogs.html">Journal</a></li>
+      <li><a href="contactus.html">Contact</a></li><li><a href="faq2.html">FAQ</a></li>
+    </ul></nav>
+    <div class="nav-icons">
+      <span class="user-welcome"></span>
+      <button class="nav-icon-btn" onclick="window.location='account.html'"><i class="fa-regular fa-user"></i></button>
+      <button class="nav-icon-btn" onclick="window.location='cart.html'"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count" style="display:none">0</span></button>
+      <button class="nav-icon-btn menu-icon"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="products-page page-enter">
+  <div class="small-container">
+    <div class="products-page-header">
+      <div><span class="section-eyebrow">The Collection</span><h1>All Pieces</h1></div>
+      <select class="products-filter-select" id="sortSelect" onchange="renderProducts()">
+        <option value="default">Default Sorting</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="name">Name: A–Z</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:0;margin-bottom:48px;border-bottom:1px solid var(--border);">
+      <button class="auth-tab active" onclick="filterCat('all',this)">All</button>
+      <button class="auth-tab" onclick="filterCat('armchair',this)">Armchairs</button>
+      <button class="auth-tab" onclick="filterCat('sofa',this)">Sofas</button>
+      <button class="auth-tab" onclick="filterCat('table',this)">Tables</button>
+    </div>
+    <div class="products-row" id="productsGrid"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand-name">En'<span>Decore</span></div><p class="footer-desc">A maison of distinguished furniture crafted for refined living.</p><div class="footer-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a></div></div>
+      <div class="footer-col"><h4>Collection</h4><ul><li><a href="products.html">All Pieces</a></li></ul></div>
+      <div class="footer-col"><h4>Maison</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="contactus.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="account.html">My Account</a></li><li><a href="cart.html">My Cart</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copyright">© 2025 En'Decore. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="firebase.js"></script><script src="ar.js"></script>
+<script>
+// Verified working Unsplash image IDs for furniture
+const ALL_PRODUCTS = [
+  { id:'lounge-armchair',   name:'Lounger Armchair',  category:'armchair', price:2250, stars:4,   link:'pd_lounger.html',  badge:'Signature', img:'images/armchair_pat-1.png' },
+  { id:'armchair-patricia', name:'Armchair Patricia', category:'armchair', price:2299, stars:3.5, link:'pd_armchair.html',       img:'images/6tgfvw6d.png' },
+  { id:'foyer-table',       name:'Foyer Table',       category:'table',    price:2150, stars:4.5, link:'pd_foyer.html',          img:'images/foyer1.png' },
+  { id:'futon-armchair',    name:'Futon Armchair',    category:'sofa',     price:2299, stars:4,   link:'pd_futon.html',          img:'images/futon1.png' },
+  { id:'antique-table',     name:'Antique Table',     category:'table',    price:2100, stars:4,   link:'antiquetable.html',      badge:'New', img:'images/antique2.png' },
+  { id:'modern-couch',      name:'Modern Couch',      category:'sofa',     price:2500, stars:3.5, link:'pd_modern_couch.html',   badge:'New', img:'images/expprod.png' },
+  { id:'toska-armchair',    name:'Toska ArmChair',    category:'armchair', price:2350, stars:4.5, link:'pd_toska-armchair.html', img:'images/toskaarm2.png' },
+  { id:'wolf-rokoko',       name:'Wolf Rokoko Chair', category:'armchair', price:2150, stars:4,   link:'pd_wolfrokoko.html',     img:'images/wolfrokoko5.png' },
+  { id:'computer-table',    name:'Computer Table',    category:'table',    price:2290, stars:4,   link:'pd_comptable.html',      img:'images/comptable4.png' },
+  { id:'shiny-table',       name:'Shiny Table',       category:'table',    price:2150, stars:3.5, link:'pd_tableshiny.html',     img:'images/tableshiny1.png' },
+  { id:'brown-armchair',    name:'Brown ArmChair',    category:'armchair', price:2250, stars:4.5, link:'pd_armchair2.html',      img:'images/gallery-1.jpg' },
+  { id:'egyptian-table',    name:'Egyptian Table',    category:'table',    price:2150, stars:4,   link:'pd_egtable.html',        img:'images/egtable1.png' },
+  { id:'luxury-sofa',       name:'Luxury Grey Sofa',  category:'sofa',     price:2450, stars:5,   link:'pd_luxury.html',         badge:'Exclusive', img:'images/expprd2.png' },
+];
+function stars(n){let h='';for(let i=1;i<=5;i++){if(i<=Math.floor(n))h+='<i class="fa fa-star"></i>';else if(i-0.5<=n)h+='<i class="fa fa-star-half-o"></i>';else h+='<i class="fa fa-star-o"></i>';}return h;}
+let currentCat='all';
+function filterCat(cat,btn){currentCat=cat;document.querySelectorAll('.auth-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');renderProducts();}
+function renderProducts(){
+  const sort=document.getElementById('sortSelect').value;
+  let list=ALL_PRODUCTS.filter(p=>currentCat==='all'||p.category===currentCat);
+  if(sort==='price-low')list.sort((a,b)=>a.price-b.price);
+  if(sort==='price-high')list.sort((a,b)=>b.price-a.price);
+  if(sort==='name')list.sort((a,b)=>a.name.localeCompare(b.name));
+  document.getElementById('productsGrid').innerHTML=list.map(p=>`
+    <div class="product-card">
+      <div class="product-card-image">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80'"/>
+        <div class="product-card-overlay"><a href="${p.link}" class="btn">View Piece</a></div>
+        ${p.badge?`<span class="product-badge">${p.badge}</span>`:''}
+        <button class="ar-quick-btn" onclick="event.stopPropagation();openAR('${p.id}','${p.name}')" title="View in AR"><i class="fa-solid fa-cube"></i></button>
+      </div>
+      <div class="product-card-info">
+        <p class="product-category">${p.category==='armchair'?'Armchair':p.category==='sofa'?'Sofa':'Table'}</p>
+        <h4 class="product-name">${p.name}</h4>
+        <div class="product-rating">${stars(p.stars)}</div>
+        <p class="product-price">₹${p.price.toLocaleString()}</p>
+      </div>
+    </div>`).join('');
+}
+renderProducts();
+</script>
+</body></html>

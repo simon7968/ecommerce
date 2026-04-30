@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — En'Decore</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-brand">En'<span>Decore</span></div><div class="loader-bar"></div></div>
+<div class="toast"></div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="navbar">
+    <div class="logo"><a href="index.html">En'<span>Decore</span></a></div>
+    <nav>
+      <ul id="MenuItems">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Collection</a></li>
+        <li><a href="about.html">Maison</a></li>
+        <li><a href="blogs.html">Journal</a></li>
+        <li><a href="contactus.html">Contact</a></li>
+        <li><a href="faq2.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <span class="user-welcome"></span>
+      <button class="nav-icon-btn" onclick="window.location='account.html'"><i class="fa-regular fa-user"></i></button>
+      <button class="nav-icon-btn" onclick="window.location='cart.html'">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count" style="display:none">0</span>
+      </button>
+      <button class="nav-icon-btn menu-icon"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- FAQ -->
+<section class="faq-section page-enter">
+  <div class="small-container">
+    <div class="faq-hero">
+      <span class="section-eyebrow">Client Services</span>
+      <h1>Frequently Asked<br><em style="font-style:italic; color:var(--gold);">Questions</em></h1>
+      <span class="gold-line" style="margin-top:16px;"></span>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-category-label" style="font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; margin-top:40px;">Orders & Delivery</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What is the typical delivery timeframe?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>We offer complimentary white-glove delivery across India. Standard delivery takes 7–10 business days. Express delivery (3–5 days) is available for select pin codes at an additional charge. You will receive real-time tracking once your order is dispatched.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I track my order?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Once your order is confirmed and dispatched, you will receive an email with a tracking link. You can also view your order status anytime from your En'Decore account dashboard.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you ship internationally?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Currently, we ship across all major Indian cities. International shipping is available to select countries — please contact our client services team for a personalised shipping quote.</p>
+        </div>
+      </div>
+
+      <div class="faq-category-label" style="font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; margin-top:40px;">Returns & Warranty</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What is your return policy?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>We offer a 30-day hassle-free return policy. If you are not completely satisfied with your purchase, simply contact our client services team and we will arrange a complimentary pickup and full refund. Items must be in their original condition.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What warranty comes with my furniture?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Every En'Decore piece carries a 5-year structural warranty covering manufacturing defects and frame integrity. Upholstery and surface finishes are covered for 2 years against manufacturing faults.</p>
+        </div>
+      </div>
+
+      <div class="faq-category-label" style="font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; margin-top:40px;">Products & Customisation</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can I customise fabric, colour, or size?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Absolutely. En'Decore offers bespoke customisation on most pieces including fabric selection, finish, and dimensions. Our interior design consultants can guide you through options — contact us or book a free consultation via our Contact page.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How does the "Try in AR" feature work?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Our Augmented Reality feature lets you place a true-to-scale 3D model of any piece in your space using your smartphone. Simply tap "Try in AR" on a product page and follow the on-screen prompts — no app download required for most devices.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Are your materials sustainably sourced?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. We are committed to responsible sourcing. Our hardwoods are FSC-certified, and we work exclusively with suppliers who meet our environmental and social standards. Our upholstery materials are OEKO-TEX certified and free from harmful substances.</p>
+        </div>
+      </div>
+
+      <div class="faq-category-label" style="font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; margin-top:40px;">Payments</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What payment methods do you accept?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>We accept all major credit and debit cards, UPI, Net Banking, and EMI options (0% on select cards for 6–24 months). All transactions are secured with 256-bit SSL encryption.</p>
+        </div>
+      </div>
+
+      <div style="padding:60px 0 20px; text-align:center;">
+        <p style="font-size:0.85rem; color:var(--soft); margin-bottom:24px;">Still have questions? Our team is here to help.</p>
+        <a href="contactus.html" class="btn btn-gold">Contact Client Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">En'<span>Decore</span></div>
+        <p class="footer-desc">A maison of distinguished furniture crafted for refined living.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Collection</h4><ul><li><a href="products.html">All Pieces</a></li></ul></div>
+      <div class="footer-col"><h4>Maison</h4><ul><li><a href="about.html">Our Story</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="account.html">My Account</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 En'Decore. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="firebase.js"></script>
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

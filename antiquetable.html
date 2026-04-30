@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Antique Table — En'Decore</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="ar.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+<div id="page-loader"><div class="loader-brand">En'<span>Decore</span></div><div class="loader-bar"></div></div>
+<div class="toast"></div>
+
+<header class="site-header">
+  <div class="navbar">
+    <div class="logo"><a href="index.html">En'<span>Decore</span></a></div>
+    <nav><ul id="MenuItems">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Collection</a></li>
+      <li><a href="about.html">Maison</a></li>
+      <li><a href="blogs.html">Journal</a></li>
+      <li><a href="contactus.html">Contact</a></li>
+      <li><a href="faq2.html">FAQ</a></li>
+    </ul></nav>
+    <div class="nav-icons">
+      <span class="user-welcome"></span>
+      <button class="nav-icon-btn" onclick="window.location='account.html'"><i class="fa-regular fa-user"></i></button>
+      <button class="nav-icon-btn" onclick="window.location='cart.html'"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count" style="display:none">0</span></button>
+      <button class="nav-icon-btn menu-icon"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="product-detail-section page-enter">
+  <div class="small-container">
+    <div class="product-detail-grid">
+
+      <!-- Gallery -->
+      <div>
+                                <div class="product-gallery-main">
+          <img src="images\antique1.png"alt="" id="mainImg"/>
+        </div>
+        <div class="product-gallery-thumbs">
+          <div class="thumb-col" onclick="swapImg('images/antique2.png',this)" title="Main View" style="cursor:pointer">
+            <img src="images\antique2.png" alt="Main View" loading="lazy"/>
+          </div>
+          <div class="thumb-col" onclick="swapImg('images/antique3.png',this)" title="Front View" style="cursor:pointer">
+            <img src="images\antique3.png" alt="Front View" loading="lazy"/>
+          </div>
+          <div class="thumb-col" onclick="swapImg('images/antique4.png',this)" title="Side View" style="cursor:pointer">
+            <img src="images\antique4.png" alt="Side View" loading="lazy"/>
+          </div>
+          <div class="thumb-col" onclick="swapImg('images/antique5.png',this)" title="Detail View" style="cursor:pointer">
+            <img src="images\antique5.png" alt="Detail View" loading="lazy"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="product-detail-info">
+        <p class="product-detail-breadcrumb">
+          <a href="index.html">Home</a> &nbsp;/&nbsp;
+          <a href="products.html">Collection</a> &nbsp;/&nbsp;
+          Tables
+        </p>
+        <h1 class="product-detail-name">Antique Table</h1>
+        <div class="product-rating" style="margin:12px 0;">
+          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+          <span style="font-size:0.72rem;color:var(--soft);margin-left:8px;">22 reviews</span>
+        </div>
+        <div class="product-detail-price">₹2,100</div>
+        <div class="product-detail-divider"></div>
+        <p class="product-detail-desc">Displaying a superb degree of artistry, this table exemplifies the historical era with grace and charm. Every element from upholstery to hardware served to unify the design of the room. The inset surface of this exquisite table features a stunning example of amethyst. Rich in Neoclassical elegance yet possessing an exotic worldliness.</p>
+
+        <label class="product-select-label">Select Finish</label>
+        <select class="product-detail-select">
+          <option value="">Choose an option</option>
+          <option value="Amethyst Inlay">Amethyst Inlay</option>
+<option value="Cream">Cream</option>
+<option value="Jet Black">Jet Black</option>
+<option value="Ivory White">Ivory White</option>
+<option value="Red Mahogany">Red Mahogany</option>
+        </select>
+
+        <div class="product-qty-row">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <input class="qty-input" type="number" id="qtyInput" value="1" min="1"/>
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+          <span style="font-size:0.72rem;color:var(--soft);margin-left:8px;">In Stock</span>
+        </div>
+
+        <div class="product-action-btns">
+          <button class="btn btn-filled" id="addCartBtn" onclick="handleAddToCart()">
+            Add to Cart &nbsp;<i class="fa-solid fa-bag-shopping" style="font-size:0.75rem;"></i>
+          </button>
+          <button class="ar-detail-btn" onclick="openVectary('antique-table')">
+            <i class="fa-solid fa-cube"></i> &nbsp; View in 3D / AR
+          </button>
+        </div>
+
+        <div class="product-features">
+          <div class="feature-item"><i class="fa-solid fa-truck-fast"></i><span>Complimentary white-glove delivery within 7–10 business days</span></div>
+          <div class="feature-item"><i class="fa-solid fa-rotate-left"></i><span>30-day returns — no questions asked</span></div>
+          <div class="feature-item"><i class="fa-solid fa-shield-halved"></i><span>5-year structural warranty on all pieces</span></div>
+          <div class="feature-item"><i class="fa-solid fa-leaf"></i><span>Sustainably sourced and certified materials</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Related Products -->
+<section style="padding:60px 0 100px;background:var(--cream);">
+  <div class="small-container">
+    <div class="section-header" style="padding-top:0;">
+      <span class="section-eyebrow">You May Also Like</span>
+      <h2 class="section-title">Related Pieces</h2>
+      <span class="gold-line"></span>
+    </div>
+    <div class="products-row">
+      
+      <div class="product-card">
+        <div class="product-card-image">
+         <img src="images/egtable1.png" alt="Egyptian Table" loading="lazy" onerror="this.src='images/egtable1.png'"/>
+<div class="product-card-overlay"><a href="pd_egtable.html" class="btn">View Piece</a></div>
+<button class="ar-quick-btn" onclick="event.stopPropagation();openAR('egyptian-table','Egyptian Table')" title="View in AR"><i class="fa-solid fa-cube"></i></button>
+        </div>
+        <div class="product-card-info">
+          <p class="product-category">Table</p>
+          <h4 class="product-name">Egyptian Table</h4>
+          <p class="product-price">₹2,150</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-image">
+          <img src="images\tableshiny1.png" alt="Shiny Table" loading="lazy" onerror="this.src='images\tableshiny1.png'"/>
+          <div class="product-card-overlay"><a href="pd_tableshiny.html" class="btn">View Piece</a></div>
+          <button class="ar-quick-btn" onclick="event.stopPropagation();openAR('shiny-table','Shiny Table')" title="View in AR"><i class="fa-solid fa-cube"></i></button>
+        </div>
+        <div class="product-card-info">
+          <p class="product-category">Table</p>
+          <h4 class="product-name">Shiny Table</h4>
+          <p class="product-price">₹2,150</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-image">
+          <img src="images\comptable1.png" alt="Computer Table" loading="lazy" onerror="this.src='images\comptable1.png'"/>
+          <div class="product-card-overlay"><a href="pd_comptable.html" class="btn">View Piece</a></div>
+          <button class="ar-quick-btn" onclick="event.stopPropagation();openAR('computer-table','Computer Table')" title="View in AR"><i class="fa-solid fa-cube"></i></button>
+        </div>
+        <div class="product-card-info">
+          <p class="product-category">Table</p>
+          <h4 class="product-name">Computer Table</h4>
+          <p class="product-price">₹2,290</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-image">
+          <img src="images\foyer1.png" alt="Foyer Table" loading="lazy" onerror="this.src='images\foyer1.png'"/>
+          <div class="product-card-overlay"><a href="pd_foyer.html" class="btn">View Piece</a></div>
+          <button class="ar-quick-btn" onclick="event.stopPropagation();openAR('foyer-table','Foyer Table')" title="View in AR"><i class="fa-solid fa-cube"></i></button>
+        </div>
+        <div class="product-card-info">
+          <p class="product-category">Table</p>
+          <h4 class="product-name">Foyer Table</h4>
+          <p class="product-price">₹2,150</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand-name">En'<span>Decore</span></div><p class="footer-desc">A maison of distinguished furniture crafted for refined living.</p><div class="footer-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+      <div class="footer-col"><h4>Collection</h4><ul><li><a href="products.html">All Pieces</a></li><li><a href="products.html">Armchairs</a></li><li><a href="products.html">Sofas</a></li><li><a href="products.html">Tables</a></li></ul></div>
+      <div class="footer-col"><h4>Maison</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="blogs.html">Journal</a></li><li><a href="contactus.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="account.html">My Account</a></li><li><a href="cart.html">My Cart</a></li><li><a href="#">Return Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copyright">© 2025 En'Decore. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="firebase.js"></script>
+<script src="ar.js"></script>
+<script>
+function swapImg(src,el){
+  document.getElementById('mainImg').src=src;
+  document.querySelectorAll('.thumb-col').forEach(t=>t.style.borderColor='transparent');
+  el.style.borderColor='var(--gold)';
+}
+function changeQty(delta){
+  const i=document.getElementById('qtyInput');
+  i.value=Math.max(1,parseInt(i.value||1)+delta);
+}
+async function handleAddToCart(){
+  const btn=document.getElementById('addCartBtn');
+  btn.innerHTML='Adding… <i class="fa-solid fa-spinner fa-spin" style="font-size:0.75rem;"></i>';
+  btn.disabled=true;
+  await addToCart({
+    id:'antique-table',
+    name:'Antique Table',
+    price:2100,
+    qty:parseInt(document.getElementById('qtyInput').value)||1,
+    category:'Table',
+    image:'images\antique1.png'
+  });
+  btn.innerHTML='Add to Cart &nbsp;<i class="fa-solid fa-bag-shopping" style="font-size:0.75rem;"></i>';
+  btn.disabled=false;
+}
+</script>
+
+<div id="vectary-modal-antique-table" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;">
+  <div style="position:relative;width:90%;max-width:900px;height:80vh;background:#fff;">
+    <button onclick="document.getElementById('vectary-modal-antique-table').style.display='none'" 
+      style="position:absolute;top:10px;right:10px;z-index:10;background:#1c1c1c;color:#fff;border:none;width:36px;height:36px;cursor:pointer;font-size:1.2rem;">✕</button>
+    <iframe id="vectary-iframe-antique-table" src="" width="100%" height="100%" frameborder="0" allowfullscreen style="display:block;"></iframe>
+  </div>
+</div>
+<script>
+function openVectary(pid) {
+  const modal = document.getElementById('vectary-modal-' + pid);
+  const iframe = document.getElementById('vectary-iframe-' + pid);
+  const urls = {
+    'antique-table': ''
+  };
+  iframe.src = urls[pid] || '';
+  modal.style.display = 'flex';
+}
+</script>
+</body>
+</html>

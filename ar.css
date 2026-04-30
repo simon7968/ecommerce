@@ -1,0 +1,345 @@
+/* ============================================================
+   EN'DECORE — AR Modal Styles
+   ============================================================ */
+
+/* ── AR trigger button on product cards ─────────────────────── */
+.ar-quick-btn {
+  position: absolute;
+  top: 14px; right: 14px;
+  width: 36px; height: 36px;
+  background: rgba(28,28,28,0.85);
+  color: var(--gold);
+  border: 1px solid rgba(184,148,63,0.4);
+  border-radius: 0;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+}
+
+.ar-quick-btn:hover {
+  background: var(--gold);
+  color: var(--ivory);
+  border-color: var(--gold);
+  transform: scale(1.08);
+}
+
+/* ── AR button on detail page ────────────────────────────────── */
+.ar-detail-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  width: 100%;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.ar-detail-btn:hover {
+  background: var(--gold);
+  color: var(--ivory);
+}
+
+/* ── Modal backdrop + container ─────────────────────────────── */
+#ar-modal {
+  display: none;
+  position: fixed; inset: 0;
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ar-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(28,28,28,0.85);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+#ar-modal.open .ar-backdrop { opacity: 1; }
+
+.ar-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  background: var(--ivory);
+  overflow: hidden;
+  transform: translateY(40px) scale(0.97);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.4s ease;
+}
+
+#ar-modal.open .ar-panel {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* ── Close button ────────────────────────────────────────────── */
+.ar-close {
+  position: absolute; top: 20px; right: 20px;
+  width: 36px; height: 36px;
+  background: var(--charcoal);
+  color: var(--ivory);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem;
+  transition: background 0.3s;
+  z-index: 10;
+}
+.ar-close:hover { background: var(--gold); }
+
+/* ── Left info panel ─────────────────────────────────────────── */
+.ar-info {
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--ivory);
+  border-right: 1px solid var(--border);
+}
+
+.ar-eyebrow {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.ar-name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.ar-divider {
+  width: 32px; height: 1px;
+  background: var(--gold);
+  margin: 16px 0;
+}
+
+.ar-desc {
+  font-size: 0.8rem;
+  color: var(--soft);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.ar-price-tag {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+
+/* ── Steps ───────────────────────────────────────────────────── */
+.ar-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+  padding: 24px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+}
+
+.ar-step-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 0.78rem;
+  color: var(--soft);
+  line-height: 1.6;
+}
+
+.ar-step-num {
+  width: 24px; height: 24px;
+  background: var(--charcoal);
+  color: var(--ivory);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* ── Action buttons ──────────────────────────────────────────── */
+.ar-action-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ar-btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: var(--charcoal);
+  color: var(--ivory);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.ar-btn-primary:hover { background: var(--gold); }
+
+.ar-btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: transparent;
+  color: var(--charcoal);
+  border: 1px solid var(--charcoal);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.ar-btn-secondary:hover { background: var(--charcoal); color: var(--ivory); }
+
+.ar-compat-note {
+  font-size: 0.68rem;
+  color: var(--soft);
+  line-height: 1.7;
+  padding: 12px;
+  border-left: 2px solid var(--gold);
+  background: rgba(184,148,63,0.06);
+}
+
+.ar-compat-note i { color: var(--gold); margin-right: 4px; }
+
+/* ── Right viewer ────────────────────────────────────────────── */
+.ar-viewer {
+  position: relative;
+  background: var(--cream);
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ar-viewer model-viewer {
+  flex: 1;
+  width: 100%;
+  min-height: 460px;
+  --poster-color: transparent;
+}
+
+/* model-viewer AR button */
+.mv-ar-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--gold);
+  color: var(--ivory);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+.mv-ar-btn:hover { background: var(--gold-dk); }
+
+/* poster / loading */
+.mv-poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: var(--cream);
+}
+
+.mv-poster p {
+  font-size: 0.72rem;
+  color: var(--soft);
+  margin-top: 12px;
+  letter-spacing: 0.1em;
+}
+
+/* hint bar */
+.ar-hint {
+  padding: 12px 20px;
+  background: var(--charcoal);
+  color: rgba(248,245,240,0.5);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+/* ── Spinner ─────────────────────────────────────────────────── */
+.ar-spinner {
+  width: 36px; height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: arSpin 0.8s linear infinite;
+}
+
+@keyframes arSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ar-panel {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 300px;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+
+  .ar-info {
+    padding: 32px 24px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .ar-viewer { min-height: 300px; }
+  .ar-viewer model-viewer { min-height: 260px; }
+
+  .ar-close { top: 12px; right: 12px; }
+}

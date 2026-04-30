@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account — En'Decore</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-brand">En'<span>Decore</span></div>
+  <div class="loader-bar"></div>
+</div>
+<div class="toast"></div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="navbar">
+    <div class="logo"><a href="index.html">En'<span>Decore</span></a></div>
+    <nav>
+      <ul id="MenuItems">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Collection</a></li>
+        <li><a href="about.html">Maison</a></li>
+        <li><a href="blogs.html">Journal</a></li>
+        <li><a href="contactus.html">Contact</a></li>
+        <li><a href="faq2.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <button class="nav-icon-btn" onclick="window.location='account.html'"><i class="fa-regular fa-user"></i></button>
+      <button class="nav-icon-btn" onclick="window.location='cart.html'">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count" style="display:none">0</span>
+      </button>
+      <button class="nav-icon-btn menu-icon" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- Auth Section -->
+<div class="account-section" id="authView">
+  <div class="account-left">
+    <div class="account-left-content">
+      <p class="hero-eyebrow" style="margin-bottom:20px;">Welcome</p>
+      <h2>Enter Your<br><em>Private Space</em></h2>
+      <p style="margin-top:16px;">
+        Join the En'Decore maison to access your curated wishlist, track orders, and experience our exclusive client services.
+      </p>
+    </div>
+  </div>
+
+  <div class="account-right">
+    <div class="auth-tabs">
+      <button class="auth-tab active" onclick="switchTab('login')">Sign In</button>
+      <button class="auth-tab" onclick="switchTab('register')">Register</button>
+    </div>
+
+    <!-- Login Form -->
+    <div class="auth-form active" id="loginForm">
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" id="loginEmail" placeholder="your@email.com" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-input" id="loginPassword" placeholder="••••••••" />
+      </div>
+      <button class="btn btn-filled auth-submit" onclick="handleLogin()">
+        Sign In <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i>
+      </button>
+      <a href="#" class="auth-forgot">Forgot Password?</a>
+    </div>
+
+    <!-- Register Form -->
+    <div class="auth-form" id="registerForm">
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-input" id="regName" placeholder="Your full name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" id="regEmail" placeholder="your@email.com" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-input" id="regPassword" placeholder="Min. 6 characters" />
+      </div>
+      <button class="btn btn-filled auth-submit" onclick="handleRegister()">
+        Create Account <i class="fa-solid fa-arrow-right" style="font-size:0.7rem;"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Dashboard (shown after login) -->
+<div id="dashboardView" style="display:none; padding:120px 0 80px;">
+  <div class="small-container">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; padding-bottom:24px; border-bottom:1px solid var(--border);">
+      <div>
+        <span class="section-eyebrow">My Account</span>
+        <h1 style="font-family:var(--font-display); font-size:2.5rem; font-weight:300;">
+          Welcome, <span id="dashName" style="font-style:italic; color:var(--gold);"></span>
+        </h1>
+      </div>
+      <button class="btn" onclick="logoutUser()">Sign Out</button>
+    </div>
+
+    <!-- Dashboard Grid -->
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:60px;">
+      <div style="background:var(--cream); border:1px solid var(--border); padding:32px; text-align:center; cursor:pointer;" onclick="window.location='cart.html'">
+        <i class="fa-solid fa-bag-shopping" style="font-size:1.8rem; color:var(--gold); margin-bottom:16px;"></i>
+        <p style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--soft); margin-bottom:4px;">My Cart</p>
+        <h3 style="font-family:var(--font-display); font-size:1.2rem; color:var(--charcoal); font-weight:400;">View Selection</h3>
+      </div>
+      <div style="background:var(--cream); border:1px solid var(--border); padding:32px; text-align:center; cursor:pointer;" onclick="loadOrders()">
+        <i class="fa-solid fa-box" style="font-size:1.8rem; color:var(--gold); margin-bottom:16px;"></i>
+        <p style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--soft); margin-bottom:4px;">My Orders</p>
+        <h3 style="font-family:var(--font-display); font-size:1.2rem; color:var(--charcoal); font-weight:400;">View History</h3>
+      </div>
+      <div style="background:var(--cream); border:1px solid var(--border); padding:32px; text-align:center;">
+        <i class="fa-regular fa-envelope" style="font-size:1.8rem; color:var(--gold); margin-bottom:16px;"></i>
+        <p style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--soft); margin-bottom:4px;">Email</p>
+        <h3 id="dashEmail" style="font-family:var(--font-display); font-size:0.9rem; color:var(--charcoal); font-weight:400;"></h3>
+      </div>
+    </div>
+
+    <!-- Orders -->
+    <div id="ordersSection" style="display:none;">
+      <h2 style="font-family:var(--font-display); font-size:1.6rem; font-weight:300; margin-bottom:24px;">Order History</h2>
+      <div id="ordersList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="firebase.js"></script>
+<script>
+  function switchTab(tab) {
+    document.querySelectorAll('.auth-tab').forEach((t,i) => t.classList.toggle('active', (tab==='login' && i===0)||(tab==='register' && i===1)));
+    document.getElementById('loginForm').classList.toggle('active', tab === 'login');
+    document.getElementById('registerForm').classList.toggle('active', tab === 'register');
+  }
+
+  async function handleLogin() {
+    const email = document.getElementById('loginEmail').value;
+    const pass  = document.getElementById('loginPassword').value;
+    if (!email || !pass) { showToast('Please fill in all fields', 'error'); return; }
+    await loginUser(email, pass);
+  }
+
+  async function handleRegister() {
+    const name  = document.getElementById('regName').value;
+    const email = document.getElementById('regEmail').value;
+    const pass  = document.getElementById('regPassword').value;
+    if (!name || !email || !pass) { showToast('Please fill in all fields', 'error'); return; }
+    await registerUser(email, pass, name);
+  }
+
+  async function loadOrders() {
+    const section = document.getElementById('ordersSection');
+    section.style.display = 'block';
+    const orders = await getUserOrders();
+    const list = document.getElementById('ordersList');
+    if (!orders.length) {
+      list.innerHTML = '<p style="color:var(--soft); font-size:0.85rem;">No orders yet. Start your collection.</p>';
+      return;
+    }
+    list.innerHTML = orders.map(o => `
+      <div style="border:1px solid var(--border); padding:24px; margin-bottom:16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <span style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);">Order #${o.id.slice(0,8).toUpperCase()}</span>
+          <span style="font-size:0.7rem; color:var(--soft);">${o.status?.toUpperCase()}</span>
+        </div>
+        <div style="font-size:0.82rem; color:var(--soft);">
+          ${(o.items||[]).map(i => `${i.name} × ${i.qty}`).join(' · ')}
+        </div>
+        <div style="font-family:var(--font-display); font-size:1.1rem; color:var(--gold); margin-top:8px;">₹${o.total?.toLocaleString()}</div>
+      </div>
+    `).join('');
+  }
+
+  // Check auth state on page load
+  watchAuthState(user => {
+    document.getElementById('authView').style.display = 'none';
+    document.getElementById('dashboardView').style.display = 'block';
+    document.getElementById('dashName').textContent = user.displayName || 'Valued Client';
+    document.getElementById('dashEmail').textContent = user.email;
+  }, () => {
+    document.getElementById('authView').style.display = 'grid';
+    document.getElementById('dashboardView').style.display = 'none';
+  });
+</script>
+</body>
+</html>

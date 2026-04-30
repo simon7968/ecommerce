@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Journal — En'Decore</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+<div id="page-loader"><div class="loader-brand">En'<span>Decore</span></div><div class="loader-bar"></div></div>
+<div class="toast"></div>
+
+<header class="site-header">
+  <div class="navbar">
+    <div class="logo"><a href="index.html">En'<span>Decore</span></a></div>
+    <nav><ul id="MenuItems">
+      <li><a href="index.html">Home</a></li><li><a href="products.html">Collection</a></li>
+      <li><a href="about.html">Maison</a></li><li><a href="blogs.html">Journal</a></li>
+      <li><a href="contactus.html">Contact</a></li><li><a href="faq2.html">FAQ</a></li>
+    </ul></nav>
+    <div class="nav-icons">
+      <span class="user-welcome"></span>
+      <button class="nav-icon-btn" onclick="window.location='account.html'"><i class="fa-regular fa-user"></i></button>
+      <button class="nav-icon-btn" onclick="window.location='cart.html'"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count" style="display:none">0</span></button>
+      <button class="nav-icon-btn menu-icon"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="blogs-hero page-enter">
+  <div class="blogs-hero-content">
+    <span class="section-eyebrow" style="color:var(--gold-lt);">The En'Decore</span>
+    <h1>Design Journal</h1>
+    <span class="gold-line" style="margin:16px auto 0;"></span>
+    <p style="color:rgba(248,245,240,0.55);font-size:0.88rem;margin-top:16px;letter-spacing:0.05em;">Everything you want to know about interior design</p>
+  </div>
+</section>
+
+<!-- FEATURED ARTICLE -->
+<section style="padding:80px 0;background:var(--ivory);">
+  <div class="small-container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <div style="overflow:hidden;aspect-ratio:4/3;">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=85" alt="Featured" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/>
+      </div>
+      <div>
+        <span class="section-eyebrow">Featured Article</span>
+        <h2 style="font-family:var(--font-display);font-size:2.2rem;font-weight:300;color:var(--charcoal);line-height:1.2;margin:12px 0 20px;">Planning Your<br><em style="font-style:italic;color:var(--gold);">"Wow Moment"</em></h2>
+        <div style="width:32px;height:1px;background:var(--gold);margin-bottom:20px;"></div>
+        <p style="font-size:0.85rem;color:var(--soft);line-height:1.9;margin-bottom:12px;">Every great interior has a centrepiece — a single element that draws the eye and anchors the entire space. Discover how to identify and create your room's defining moment.</p>
+        <p style="font-size:0.85rem;color:var(--soft);line-height:1.9;margin-bottom:32px;">From statement furniture to strategic lighting, we guide you through the art of creating spaces that leave a lasting impression on every guest.</p>
+        <div style="display:flex;align-items:center;gap:20px;">
+          <span style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--soft);">20 May, 2025</span>
+          <span style="width:1px;height:16px;background:var(--border);"></span>
+          <span style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);">Interior Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG GRID -->
+<section style="background:var(--cream);padding:80px 0;">
+  <div class="small-container">
+    <div class="section-header" style="padding-top:0;">
+      <span class="section-eyebrow">Latest Articles</span>
+      <h2 class="section-title">From the Journal</h2>
+      <span class="gold-line"></span>
+    </div>
+    <div class="blogs-grid">
+
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Augmented Reality"/>
+        </div>
+        <p class="blog-card-tag">Technology · 20 May, 2025</p>
+        <h3 class="blog-card-title">Augmented Reality Enters the World of Retail Furniture</h3>
+        <p class="blog-card-excerpt">How AR technology is transforming the way we shop for furniture — eliminating doubt and delivering confidence before purchase.</p>
+        <span class="blog-card-link">Read Article</span>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Vintage Furniture"/>
+        </div>
+        <p class="blog-card-tag">Design · 15 April, 2025</p>
+        <h3 class="blog-card-title">The Furniture You Tossed to the Curb Might Just Be a Work of Art</h3>
+        <p class="blog-card-excerpt">Vintage pieces are having a renaissance. Learn how to identify hidden gems and restore them to their former glory.</p>
+        <span class="blog-card-link">Read Article</span>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=80" alt="Modern Farmhouse"/>
+        </div>
+        <p class="blog-card-tag">Inspiration · 20 Jan, 2025</p>
+        <h3 class="blog-card-title">Dream Home: A Modern English Farmhouse</h3>
+        <p class="blog-card-excerpt">A modern English farmhouse that perfectly balances crisp clean lines with soft traditional textures and warm tones.</p>
+        <span class="blog-card-link">Read Article</span>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600&q=80" alt="Sustainability"/>
+        </div>
+        <p class="blog-card-tag">Sustainability · 10 March, 2025</p>
+        <h3 class="blog-card-title">Protecting Our World — Sustainable Furniture Choices</h3>
+        <p class="blog-card-excerpt">How to furnish your home beautifully while making choices that respect the environment for future generations.</p>
+        <span class="blog-card-link">Read Article</span>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80" alt="Furniture Arrangement"/>
+        </div>
+        <p class="blog-card-tag">Guide · 26 March, 2025</p>
+        <h3 class="blog-card-title">Furniture Arrangement Series — Getting the Layout Right</h3>
+        <p class="blog-card-excerpt">Furniture arrangement can be challenging. We walk you through the principles of balance, flow, and focal points.</p>
+        <span class="blog-card-link">Read Article</span>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1611464908623-07f19927264e?w=600&q=80" alt="Freshen Up"/>
+        </div>
+        <p class="blog-card-tag">Style · 5 Feb, 2025</p>
+        <h3 class="blog-card-title">How to Freshen Up Your Home and Make It Look Like "You"</h3>
+        <p class="blog-card-excerpt">Personal style is everything. Discover how small, curated changes can transform a house into a home that reflects your identity.</p>
+        <span class="blog-card-link">Read Article</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section style="padding:80px 0;background:var(--charcoal);">
+  <div class="small-container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+      <div>
+        <span class="section-eyebrow" style="color:var(--gold-lt);">En'Decore</span>
+        <h2 style="font-family:var(--font-display);font-size:2.5rem;font-weight:300;color:var(--ivory);line-height:1.2;margin:12px 0 24px;">
+          Imagine you are<br>a <em style="font-style:italic;color:var(--gold-lt);">painting</em>
+        </h2>
+        <p style="color:rgba(248,245,240,0.55);font-size:0.85rem;line-height:2;">
+          And your soul, a vibrant palette.<br>
+          Look at the memories inside of you,<br>
+          and stain yourself with hues.<br>
+          In the end — paint your heart.<br>
+          Turn your home into a mosaic piece of art.
+        </p>
+        <a href="about.html" class="btn btn-gold" style="margin-top:32px;">Discover Our Maison</a>
+      </div>
+      <div style="overflow:hidden;">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80" alt="En'Decore" style="width:100%;border:1px solid rgba(184,148,63,0.3);"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand-name">En'<span>Decore</span></div><p class="footer-desc">A maison of distinguished furniture crafted for refined living.</p><div class="footer-social"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+      <div class="footer-col"><h4>Collection</h4><ul><li><a href="products.html">All Pieces</a></li><li><a href="products.html">Armchairs</a></li><li><a href="products.html">Sofas</a></li><li><a href="products.html">Tables</a></li></ul></div>
+      <div class="footer-col"><h4>Maison</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="blogs.html">Journal</a></li><li><a href="contactus.html">Contact</a></li><li><a href="faq2.html">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="account.html">My Account</a></li><li><a href="cart.html">My Cart</a></li><li><a href="#">Return Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 En'Decore. All rights reserved.</p>
+      <p class="footer-copyright">Crafted with distinction — Chennai, Tamil Nadu</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="firebase.js"></script>
+</body>
+</html>

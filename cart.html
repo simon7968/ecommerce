@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cart — En'Decore</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<div id="page-loader">
+  <div class="loader-brand">En'<span>Decore</span></div>
+  <div class="loader-bar"></div>
+</div>
+<div class="toast"></div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="navbar">
+    <div class="logo"><a href="index.html">En'<span>Decore</span></a></div>
+    <nav>
+      <ul id="MenuItems">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Collection</a></li>
+        <li><a href="about.html">Maison</a></li>
+        <li><a href="blogs.html">Journal</a></li>
+        <li><a href="contactus.html">Contact</a></li>
+        <li><a href="faq2.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <span class="user-welcome"></span>
+      <button class="nav-icon-btn" onclick="window.location='account.html'"><i class="fa-regular fa-user"></i></button>
+      <button class="nav-icon-btn" onclick="window.location='cart.html'">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count" style="display:none">0</span>
+      </button>
+      <button class="nav-icon-btn menu-icon"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- Cart Section -->
+<section class="cart-section">
+  <div class="small-container">
+    <span class="cart-section-eyebrow">My Selection</span>
+    <h1>Shopping Cart</h1>
+
+    <div class="cart-layout" id="cartLayout">
+      <!-- Cart Items -->
+      <div>
+        <div id="cartEmpty" style="display:none; padding:80px 0; text-align:center;">
+          <i class="fa-solid fa-bag-shopping" style="font-size:3rem; color:var(--border); margin-bottom:24px;"></i>
+          <p style="font-family:var(--font-display); font-size:1.5rem; color:var(--mid); font-weight:300;">Your selection is empty</p>
+          <p style="margin:8px 0 32px; font-size:0.82rem;">Discover our curated collection of distinguished furniture.</p>
+          <a href="products.html" class="btn btn-filled">Explore Collection</a>
+        </div>
+
+        <table class="cart-table" id="cartTable">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Qty</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="cartBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Order Summary -->
+      <div>
+        <div class="cart-summary">
+          <h3>Order Summary</h3>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="summarySubtotal">₹0</span>
+          </div>
+          <div class="summary-row">
+            <span>GST (18%)</span>
+            <span id="summaryTax">₹0</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>Complimentary</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="summaryTotal">₹0</span>
+          </div>
+
+          <!-- Checkout -->
+          <button class="btn btn-filled cart-checkout-btn" onclick="handleCheckout()" id="checkoutBtn" disabled>
+            Proceed to Checkout
+          </button>
+          <p style="font-size:0.68rem; color:var(--soft); text-align:center; margin-top:12px; letter-spacing:0.05em;">
+            Sign in required to place an order
+          </p>
+        </div>
+
+        <!-- Shipping form (shown at checkout) -->
+        <div id="shippingForm" style="display:none; margin-top:24px; background:var(--cream); border:1px solid var(--border); padding:32px;">
+          <h3 style="font-family:var(--font-display); font-size:1.2rem; font-weight:300; margin-bottom:24px;">Delivery Details</h3>
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" id="shipName" placeholder="Recipient name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Address</label>
+            <input type="text" class="form-input" id="shipAddress" placeholder="Street address" />
+          </div>
+          <div class="form-group" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div>
+              <label class="form-label">City</label>
+              <input type="text" class="form-input" id="shipCity" placeholder="City" />
+            </div>
+            <div>
+              <label class="form-label">PIN Code</label>
+              <input type="text" class="form-input" id="shipPin" placeholder="600001" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input type="tel" class="form-input" id="shipPhone" placeholder="+91 00000 00000" />
+          </div>
+          <button class="btn btn-gold" style="width:100%;justify-content:center;margin-top:8px;" onclick="confirmOrder()">
+            Confirm Order <i class="fa-solid fa-check" style="font-size:0.7rem;"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">En'<span>Decore</span></div>
+        <p class="footer-desc">A maison of distinguished furniture crafted for refined living.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Collection</h4><ul><li><a href="products.html">All Pieces</a></li></ul></div>
+      <div class="footer-col"><h4>Maison</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="contactus.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="account.html">My Account</a></li><li><a href="#">Return Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 En'Decore. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="firebase.js"></script>
+<script>
+  // Render cart on load
+  async function renderCart() {
+    const cart = await getCart();
+    const tbody = document.getElementById('cartBody');
+    const table = document.getElementById('cartTable');
+    const empty = document.getElementById('cartEmpty');
+
+    if (!cart.length) {
+      table.style.display = 'none';
+      empty.style.display = 'block';
+      updateSummary(0);
+      return;
+    }
+
+    table.style.display = 'table';
+    empty.style.display = 'none';
+
+    tbody.innerHTML = cart.map(item => `
+      <tr>
+        <td>
+          <div class="cart-product-info">
+            <img src="${item.image || 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=200'}" alt="${item.name}" />
+            <div>
+              <p class="cart-product-category">${item.category || 'Furniture'}</p>
+              <p class="cart-product-name">${item.name}</p>
+              <button class="cart-remove-btn" onclick="handleRemove('${item.id}')">Remove</button>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <button class="qty-btn" onclick="handleQty('${item.id}', ${item.qty - 1})">−</button>
+            <input class="qty-input" type="number" value="${item.qty}" min="1"
+              onchange="handleQty('${item.id}', parseInt(this.value))" />
+            <button class="qty-btn" onclick="handleQty('${item.id}', ${item.qty + 1})">+</button>
+          </div>
+        </td>
+        <td>
+          <span style="font-family:var(--font-display);font-size:1.1rem;color:var(--gold);">
+            ₹${(item.price * item.qty).toLocaleString()}
+          </span>
+        </td>
+      </tr>
+    `).join('');
+
+    const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    updateSummary(subtotal);
+  }
+
+  function updateSummary(subtotal) {
+    const tax   = Math.round(subtotal * 0.18);
+    const total = subtotal + tax;
+    document.getElementById('summarySubtotal').textContent = `₹${subtotal.toLocaleString()}`;
+    document.getElementById('summaryTax').textContent      = `₹${tax.toLocaleString()}`;
+    document.getElementById('summaryTotal').textContent    = `₹${total.toLocaleString()}`;
+  }
+
+  async function handleRemove(id) {
+    await removeFromCart(id);
+    renderCart();
+  }
+
+  async function handleQty(id, qty) {
+    if (qty < 1) { await handleRemove(id); return; }
+    await updateCartQty(id, qty);
+    renderCart();
+  }
+
+  function handleCheckout() {
+    if (!auth.currentUser) { showToast('Please sign in to checkout', 'error'); window.location = 'account.html'; return; }
+    document.getElementById('shippingForm').style.display = 'block';
+    document.getElementById('shippingForm').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  async function confirmOrder() {
+    const shipping = {
+      name:    document.getElementById('shipName').value,
+      address: document.getElementById('shipAddress').value,
+      city:    document.getElementById('shipCity').value,
+      pin:     document.getElementById('shipPin').value,
+      phone:   document.getElementById('shipPhone').value
+    };
+    if (!shipping.name || !shipping.address) { showToast('Please fill shipping details', 'error'); return; }
+    const orderId = await placeOrder(shipping);
+    if (orderId) {
+      document.getElementById('shippingForm').style.display = 'none';
+      renderCart();
+    }
+  }
+
+  // Enable checkout if logged in
+  watchAuthState(user => {
+    const btn = document.getElementById('checkoutBtn');
+    btn.disabled = false;
+    btn.nextElementSibling.style.display = 'none';
+  });
+
+  renderCart();
+</script>
+</body>
+</html>

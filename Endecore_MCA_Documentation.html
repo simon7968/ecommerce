@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+    body { font-family: 'Times New Roman', Times, serif; font-size: 12pt; line-height: 1.8; margin: 1in; }
+    h1 { font-size: 22pt; text-align: center; text-transform: uppercase; margin-bottom: 20px; page-break-before: always; border-bottom: 2px solid #333; padding-bottom: 10px; }
+    h2 { font-size: 16pt; margin-top: 30px; margin-bottom: 10px; }
+    h3 { font-size: 13pt; margin-top: 20px; margin-bottom: 8px; }
+    p { text-align: justify; margin-bottom: 12px; }
+    .center { text-align: center; }
+    .page-break { page-break-before: always; }
+    .cover-page { text-align: center; margin-top: 80px; }
+    .cover-title { font-size: 26pt; font-weight: bold; margin-bottom: 40px; }
+    .bold { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 15px; }
+    table, th, td { border: 1px solid black; }
+    th { padding: 10px; text-align: center; background-color: #f0f0f0; font-weight: bold; }
+    td { padding: 10px; text-align: left; }
+    .placeholder { background-color: #ffffcc; border: 1px dashed orange; padding: 20px; text-align: center; font-weight: bold; margin: 20px 0; }
+    ul, ol { margin-left: 20px; margin-bottom: 12px; }
+    li { margin-bottom: 6px; }
+    .toc-table td { border: none; padding: 6px 10px; }
+    .toc-table { border: none; margin-top: 30px; }
+    .toc-table tr:first-child td { border-bottom: 2px solid #333; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<!-- ==================== COVER PAGE ==================== -->
+<div class="cover-page">
+    <h2>A MASTER OF COMPUTER APPLICATIONS PROJECT REPORT ON</h2>
+    <div class="cover-title">EN'DECORE — MAISON OF FURNITURE<br>(AR-Based E-Commerce Platform)</div>
+    <br><br>
+    <p class="center">Submitted by</p>
+    <h3>[YOUR NAME HERE]</h3>
+    <h3>[REGISTRATION NUMBER HERE]</h3>
+    <br><br>
+    <p class="center">Under the Guidance of</p>
+    <h3>[GUIDE NAME HERE]</h3>
+    <br><br><br><br>
+    <h3>[COLLEGE / UNIVERSITY NAME HERE]</h3>
+    <p class="center">[YEAR / SEMESTER]</p>
+</div>
+
+<!-- ==================== CERTIFICATE ==================== -->
+<h1 class="page-break">CERTIFICATE</h1>
+<p>This is to certify that the project report entitled <b>"EN'DECORE — AR Based E-Commerce Platform"</b> is a bonafide work carried out by <b>[YOUR NAME HERE]</b> under my supervision and guidance for the partial fulfillment of the requirements for the award of the Degree of Master of Computer Applications from <b>[UNIVERSITY NAME HERE]</b>.</p>
+<br><br><br><br>
+<p><b>Signature of the Guide</b> <span style="float:right;"><b>Signature of the HOD</b></span></p>
+
+<!-- ==================== ACKNOWLEDGEMENT ==================== -->
+<h1 class="page-break">ACKNOWLEDGEMENT</h1>
+<p>I would like to express my profound gratitude to all those who have been instrumental in the preparation of this project report. I wish to express my deep sense of gratitude to my guide <b>[GUIDE NAME HERE]</b> for their valuable guidance, constant encouragement, and moral support throughout the development of this project.</p>
+<p>I also extend my heartfelt thanks to the Head of the Department and all the faculty members who directly or indirectly helped me in this endeavor.</p>
+<br><br>
+<p><b>[YOUR NAME HERE]</b></p>
+
+<!-- ==================== ABSTRACT ==================== -->
+<h1 class="page-break">ABSTRACT</h1>
+<p>Introducing a visual try-on feature (Augmented Reality) to an e-commerce website provides an innovative way for customers to engage with products before making a purchase. By leveraging this feature, users can virtually experience how a specific furniture item would look or fit in their room, ultimately enhancing their shopping experience.</p>
+<p>This technology has the potential to increase customer satisfaction and reduce return rates by allowing individuals to make more informed decisions when buying furniture or accessories online. <b>En'Decore</b> is a web application designed using HTML, CSS, JavaScript, and Firebase that features a completely modern, luxurious interface with dynamic rendering capabilities and robust e-commerce features such as a real-time shopping cart, user authentication, and order management.</p>
+
+<!-- ==================== TABLE OF CONTENTS ==================== -->
+<h1 class="page-break">TABLE OF CONTENTS</h1>
+<table class="toc-table" style="width:100%;">
+    <tr>
+        <td><b>S.No.</b></td>
+        <td><b>Content</b></td>
+        <td style="text-align:center;"><b>Page No.</b></td>
+    </tr>
+    <tr><td>1</td><td><b>INTRODUCTION</b></td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;1.1 Company / Brand Profile</td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;1.2 About the Project</td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;1.3 Objectives of the Project</td><td></td></tr>
+    <tr><td>2</td><td><b>REQUIREMENT SPECIFICATION</b></td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;2.1 Hardware Specification</td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;2.2 Software Specification</td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;2.3 About the Software / Technologies Used</td><td></td></tr>
+    <tr><td>3</td><td><b>SYSTEM ANALYSIS</b></td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;3.1 Feasibility Study</td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;3.2 Existing System</td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;3.3 Proposed System</td><td></td></tr>
+    <tr><td>4</td><td><b>SYSTEM DESIGN</b></td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;4.1 Database Design (Firebase Collections)</td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;4.2 Data Dictionary</td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;4.3 Input Design</td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;4.4 Data Flow Diagram (DFD)</td><td></td></tr>
+    <tr><td></td><td>&nbsp;&nbsp;&nbsp;4.5 Use Case Diagram</td><td></td></tr>
+    <tr><td>5</td><td><b>SYSTEM DESCRIPTION (Modules)</b></td><td></td></tr>
+    <tr><td>6</td><td><b>TESTING AND IMPLEMENTATION</b></td><td></td></tr>
+    <tr><td>7</td><td><b>CONCLUSION AND FUTURE SCOPE</b></td><td></td></tr>
+    <tr><td>8</td><td><b>FORMS AND REPORTS (Screenshots)</b></td><td></td></tr>
+    <tr><td>9</td><td><b>BIBLIOGRAPHY</b></td><td></td></tr>
+</table>
+
+<!-- ==================== CHAPTER 1: INTRODUCTION ==================== -->
+<h1 class="page-break">1. INTRODUCTION</h1>
+
+<h2>1.1 Company / Brand Profile</h2>
+<p><b>En'Decore — Maison of Furniture</b> is a conceptual luxury furniture brand developed as part of this MCA project. The name "En'Decore" is derived from the word "décor," symbolizing elegance and distinction in home furnishing. The brand philosophy is inspired by world-renowned luxury houses such as Hermès, Louis Vuitton, and Prada — emphasizing craftsmanship, timeless design, and premium user experience.</p>
+<p>The brand positions itself as a high-end, AR-enabled online furniture store based out of <b>Chennai, Tamil Nadu</b>. Its product catalog includes curated armchairs, sofas, couches, tables, and exclusive designer pieces — each presented with luxurious imagery and detailed information. En'Decore aspires to bridge the gap between physical furniture showrooms and online shopping through immersive Augmented Reality visualization.</p>
+
+<h2>1.2 About the Project</h2>
+<p>The <b>En'Decore AR-Based E-Commerce Platform</b> is a web application that enables users to browse, explore, and purchase luxury furniture online. Its key differentiator is the integration of <b>Augmented Reality (AR)</b>, allowing customers to virtually visualize how furniture pieces would look within their own living spaces using their device's camera.</p>
+<p>The platform is built using a pure frontend stack — <b>HTML5, CSS3, and Vanilla JavaScript</b> — with <b>Google Firebase</b> powering the backend services including user authentication, real-time database (Firestore), and session management. The design follows a luxury aesthetic with gold-accented color palettes, elegant typography (Cormorant Garamond, Montserrat), smooth micro-animations, and a grain-texture overlay for a premium feel.</p>
+<p>Key functionalities include user registration and login, a dynamic product catalog with category filtering and sorting, individual product detail pages with AR "View Piece" integration, a real-time shopping cart with quantity management and GST calculation, order placement with shipping details storage, a contact form connected to Firestore, and a responsive layout across all devices.</p>
+
+<h2>1.3 Objectives of the Project</h2>
+<ul>
+    <li><b>Enhanced Product Visualization:</b> Enable users to see how furniture fits in their actual space using AR technology, reducing purchase hesitation.</li>
+    <li><b>Improved User Experience:</b> Deliver a luxurious, intuitive, and responsive interface that rivals premium brand websites.</li>
+    <li><b>Increased Sales & Conversions:</b> By allowing virtual try-ons, reduce product return rates and increase buyer confidence.</li>
+    <li><b>Cross-Platform Accessibility:</b> Ensure the platform works seamlessly across desktops, tablets, and mobile browsers.</li>
+    <li><b>Real-Time Data Management:</b> Leverage Firebase for instant user authentication, cart synchronization, and order tracking.</li>
+    <li><b>Solving Real-World Problems:</b> Address the fundamental limitation of online furniture shopping — the inability to visualize furniture at scale in one's own home.</li>
+</ul>
+
+<!-- ==================== CHAPTER 2: REQUIREMENT SPECIFICATION ==================== -->
+<h1 class="page-break">2. REQUIREMENT SPECIFICATION</h1>
+
+<h2>2.1 Hardware Specification</h2>
+<table>
+    <tr><th>Component</th><th>Minimum Requirement</th></tr>
+    <tr><td>Processor</td><td>Any modern mobile or desktop processor (Intel i3 / ARM equivalent or higher)</td></tr>
+    <tr><td>RAM</td><td>2 GB minimum (4 GB or more recommended)</td></tr>
+    <tr><td>Hard Disk / Storage</td><td>2 GB or more of free space</td></tr>
+    <tr><td>Camera</td><td>Required for AR feature (built-in webcam or mobile camera)</td></tr>
+    <tr><td>Display</td><td>Minimum 1024×768 resolution</td></tr>
+    <tr><td>Internet</td><td>Active internet connection (for Firebase services and AR.js)</td></tr>
+</table>
+
+<h2>2.2 Software Specification</h2>
+<table>
+    <tr><th>Software</th><th>Details</th></tr>
+    <tr><td>Operating System</td><td>Windows 10/11, macOS, Linux, Android, iOS</td></tr>
+    <tr><td>Web Browser</td><td>Google Chrome (recommended), Safari, Microsoft Edge</td></tr>
+    <tr><td>Code Editor</td><td>Visual Studio Code / Any text editor</td></tr>
+    <tr><td>Frontend Technologies</td><td>HTML5, CSS3, JavaScript (ES6+)</td></tr>
+    <tr><td>Backend / Database</td><td>Google Firebase (Firestore, Authentication)</td></tr>
+    <tr><td>AR Framework</td><td>AR.js (web-based augmented reality)</td></tr>
+    <tr><td>Fonts & Icons</td><td>Google Fonts (Cormorant Garamond, Montserrat), Font Awesome 6.4</td></tr>
+</table>
+
+<h2>2.3 About the Software / Technologies Used</h2>
+
+<h3>2.3.1 HTML5</h3>
+<p>HTML5 (HyperText Markup Language version 5) is the standard markup language used for structuring content on the web. In En'Decore, HTML5 provides semantic elements for the page structure, forms for user input (login, registration, contact, checkout), and the foundational layout for all pages.</p>
+
+<h3>2.3.2 CSS3</h3>
+<p>CSS3 (Cascading Style Sheets Level 3) is used for styling and visual presentation. The project uses a comprehensive custom design system with CSS custom properties (variables), Grid and Flexbox layouts, animations and transitions, glassmorphism effects, and responsive media queries. A luxury design palette featuring ivory, gold, charcoal, and cream tones is implemented entirely in vanilla CSS.</p>
+
+<h3>2.3.3 JavaScript (Vanilla ES6+)</h3>
+<p>JavaScript powers all client-side interactivity including dynamic product rendering, event-driven cart management, Firebase SDK interactions for authentication and database operations, AR modal controls, toast notifications, and DOM manipulation. No external JavaScript frameworks or libraries are used — the application relies on pure vanilla JS for maximum performance.</p>
+
+<h3>2.3.4 Google Firebase</h3>
+<p>Firebase is a Backend-as-a-Service (BaaS) platform by Google that provides: <b>Firebase Authentication</b> for email/password-based user registration and login; <b>Cloud Firestore</b> as a NoSQL real-time database for storing user profiles, shopping carts, orders, and contact form messages. Firebase SDK v9 (compat mode) is used for client-side integration.</p>
+
+<h3>2.3.5 AR.js</h3>
+<p>AR.js is an open-source, lightweight JavaScript library for web-based Augmented Reality. It enables marker-based and markerless AR experiences directly in the browser without requiring native app installation. In En'Decore, AR.js is used to project furniture 3D models into the user's camera feed for virtual try-on.</p>
+
+<!-- ==================== CHAPTER 3: SYSTEM ANALYSIS ==================== -->
+<h1 class="page-break">3. SYSTEM ANALYSIS</h1>
+
+<h2>3.1 Feasibility Study</h2>
+
+<h3>3.1.1 Technical Feasibility</h3>
+<p>The project is technically feasible as it uses well-established web technologies (HTML, CSS, JavaScript) that are universally supported across modern browsers. Firebase provides a reliable and scalable backend without the need for dedicated server infrastructure. AR.js enables browser-based augmented reality without requiring users to download additional software. All technologies used are open-source or free-tier, making them accessible for development and deployment.</p>
+
+<h3>3.1.2 Economic Feasibility</h3>
+<p>The project is economically viable as it uses entirely free and open-source technologies. Firebase offers a generous free tier (Spark Plan) sufficient for development and moderate usage. No paid licenses, hosting server purchases, or third-party subscriptions are required. The only cost is development time and effort.</p>
+
+<h3>3.1.3 Operational Feasibility</h3>
+<p>The system is operationally feasible as it is designed with a user-friendly interface that requires no technical training. The AR feature is accessible via standard device cameras. The platform can be operated by both end-users (customers) and administrators with minimal onboarding. The responsive design ensures accessibility across different device types.</p>
+
+<h2>3.2 Existing System</h2>
+<p>In the existing scenario of online furniture shopping, most e-commerce platforms offer static product images and basic descriptions. Customers face several challenges:</p>
+<ul>
+    <li>Inability to visualize how furniture would actually look in their living space.</li>
+    <li>Size and proportion misjudgments leading to high return rates.</li>
+    <li>Lack of immersive product interaction — users rely solely on 2D photos.</li>
+    <li>Generic website designs that do not convey luxury or brand distinction.</li>
+    <li>Complex checkout processes with poor user experience.</li>
+</ul>
+<p><b>Drawbacks of the Existing System:</b></p>
+<ul>
+    <li>No AR or virtual try-on capability in most furniture websites.</li>
+    <li>Poor visual representation leads to customer dissatisfaction.</li>
+    <li>High product return rates (estimated 20-30% in online furniture).</li>
+    <li>Customers must visit physical showrooms to verify product suitability.</li>
+</ul>
+
+<h2>3.3 Proposed System</h2>
+<p>The proposed <b>En'Decore</b> system addresses the limitations of the existing system by offering:</p>
+<ul>
+    <li><b>AR-Based Virtual Try-On:</b> Users can view furniture in their own room through their device camera before purchasing.</li>
+    <li><b>Luxury UI/UX Design:</b> A premium interface with gold-accented design, elegant typography, smooth animations, and grain texture overlays that elevate the shopping experience.</li>
+    <li><b>Real-Time Cart & Order Management:</b> Firebase-powered shopping cart with live synchronization, GST calculation (18%), and seamless checkout with delivery details.</li>
+    <li><b>User Authentication:</b> Secure email/password registration and login using Firebase Authentication, with guest-cart to user-cart migration on signup.</li>
+    <li><b>Dynamic Product Rendering:</b> JavaScript-driven product catalogs with category filtering (Armchairs, Sofas, Tables) and sorting options (price, name).</li>
+    <li><b>Contact Form Integration:</b> Customer messages stored directly in Firebase Firestore for easy management.</li>
+    <li><b>Responsive Design:</b> Full compatibility across desktops, tablets, and mobile devices.</li>
+</ul>
+
+<p><b>Advantages of the Proposed System:</b></p>
+<ul>
+    <li>Reduces product returns by enabling informed purchasing decisions.</li>
+    <li>Increases customer engagement through immersive AR experiences.</li>
+    <li>No server maintenance required (Firebase BaaS handles infrastructure).</li>
+    <li>Fast page loads with lightweight vanilla JavaScript architecture.</li>
+    <li>Scalable to accommodate additional product categories and features.</li>
+</ul>
+
+<!-- ==================== CHAPTER 4: SYSTEM DESIGN ==================== -->
+<h1 class="page-break">4. SYSTEM DESIGN</h1>
+
+<h2>4.1 Database Design (Firebase Collections)</h2>
+<p>Since En'Decore uses <b>Firebase Cloud Firestore</b> (a NoSQL document database), the data is organized into <b>collections</b> and <b>documents</b> rather than traditional SQL tables. The following collections are used:</p>
+
+<table>
+    <tr><th>S.No.</th><th>Collection Name</th><th>Purpose</th></tr>
+    <tr><td>1</td><td>users</td><td>Stores registered user profiles (name, email, creation date)</td></tr>
+    <tr><td>2</td><td>carts</td><td>Stores shopping cart items per user (product details, quantity)</td></tr>
+    <tr><td>3</td><td>orders</td><td>Stores placed orders with items, shipping info, total, and status</td></tr>
+    <tr><td>4</td><td>messages</td><td>Stores contact form submissions (name, email, message)</td></tr>
+</table>
+
+<h2>4.2 Data Dictionary</h2>
+
+<h3>Collection: users</h3>
+<table>
+    <tr><th>Field Name</th><th>Data Type</th><th>Description</th></tr>
+    <tr><td>uid (Document ID)</td><td>String</td><td>Unique user identifier (auto-generated by Firebase Auth)</td></tr>
+    <tr><td>name</td><td>String</td><td>Full name of the user</td></tr>
+    <tr><td>email</td><td>String</td><td>Email address of the user</td></tr>
+    <tr><td>createdAt</td><td>Timestamp</td><td>Account creation date and time</td></tr>
+</table>
+
+<h3>Collection: carts → Sub-collection: items</h3>
+<table>
+    <tr><th>Field Name</th><th>Data Type</th><th>Description</th></tr>
+    <tr><td>id</td><td>String</td><td>Product identifier (e.g., "lounge-armchair")</td></tr>
+    <tr><td>name</td><td>String</td><td>Product name</td></tr>
+    <tr><td>price</td><td>Number</td><td>Unit price in INR (₹)</td></tr>
+    <tr><td>qty</td><td>Number</td><td>Quantity selected by user</td></tr>
+    <tr><td>image</td><td>String</td><td>Image path/URL of the product</td></tr>
+    <tr><td>category</td><td>String</td><td>Product category (armchair, sofa, table)</td></tr>
+</table>
+
+<h3>Collection: orders</h3>
+<table>
+    <tr><th>Field Name</th><th>Data Type</th><th>Description</th></tr>
+    <tr><td>orderId (Document ID)</td><td>String</td><td>Auto-generated unique order identifier</td></tr>
+    <tr><td>userId</td><td>String</td><td>Reference to the user who placed the order</td></tr>
+    <tr><td>items</td><td>Array</td><td>Array of ordered products with name, price, qty</td></tr>
+    <tr><td>shipping</td><td>Map</td><td>Shipping details: name, address, city, PIN, phone</td></tr>
+    <tr><td>subtotal</td><td>Number</td><td>Cart subtotal before tax</td></tr>
+    <tr><td>tax</td><td>Number</td><td>GST amount (18% of subtotal)</td></tr>
+    <tr><td>total</td><td>Number</td><td>Final order total (subtotal + tax)</td></tr>
+    <tr><td>status</td><td>String</td><td>Order status (e.g., "confirmed", "shipped")</td></tr>
+    <tr><td>createdAt</td><td>Timestamp</td><td>Order placement date and time</td></tr>
+</table>
+
+<h3>Collection: messages</h3>
+<table>
+    <tr><th>Field Name</th><th>Data Type</th><th>Description</th></tr>
+    <tr><td>name</td><td>String</td><td>Name of the person sending the message</td></tr>
+    <tr><td>email</td><td>String</td><td>Email of the sender</td></tr>
+    <tr><td>message</td><td>String</td><td>Content of the message</td></tr>
+    <tr><td>createdAt</td><td>Timestamp</td><td>Date and time the message was submitted</td></tr>
+</table>
+
+<h2>4.3 Input Design</h2>
+<p>Input design focuses on how data is captured from users. The following input forms are implemented in the En'Decore platform:</p>
+<table>
+    <tr><th>Form</th><th>Page</th><th>Input Fields</th><th>Validation</th></tr>
+    <tr><td>Login Form</td><td>account.html</td><td>Email, Password</td><td>Required fields, Firebase auth validation</td></tr>
+    <tr><td>Registration Form</td><td>account.html</td><td>Full Name, Email, Password</td><td>Required fields, min 6-char password</td></tr>
+    <tr><td>Contact Form</td><td>contactus.html</td><td>Name, Email, Message</td><td>Required fields, stored to Firestore</td></tr>
+    <tr><td>Shipping Form</td><td>cart.html</td><td>Full Name, Address, City, PIN Code, Phone</td><td>Required: name & address minimum</td></tr>
+    <tr><td>Cart Quantity</td><td>cart.html</td><td>Quantity input (number)</td><td>Minimum value: 1</td></tr>
+</table>
+
+<h2>4.4 Data Flow Diagram (DFD)</h2>
+
+<h3>Level-0 (Context Diagram)</h3>
+<p>The context diagram represents the entire En'Decore system as a single process interacting with external entities.</p>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: INSERT YOUR LEVEL-0 DFD / CONTEXT DIAGRAM HERE]<br>
+    External Entities: User, Camera (AR), Firebase Server<br>
+    Single Process: En'Decore Platform
+</div>
+
+<h3>Level-1 DFD</h3>
+<p>The Level-1 DFD breaks down the platform into major sub-processes:</p>
+<ul>
+    <li><b>Process 1.0:</b> User Authentication (Login / Registration)</li>
+    <li><b>Process 2.0:</b> Product Browsing & Filtering</li>
+    <li><b>Process 3.0:</b> AR Visualization</li>
+    <li><b>Process 4.0:</b> Cart Management (Add, Update, Remove)</li>
+    <li><b>Process 5.0:</b> Order Processing & Checkout</li>
+    <li><b>Process 6.0:</b> Contact Message Handling</li>
+</ul>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: INSERT YOUR LEVEL-1 DFD DIAGRAM HERE]
+</div>
+
+<h2>4.5 Use Case Diagram</h2>
+<p>Use-case diagrams capture the system's functionality by modeling actors and their interactions with the system.</p>
+<p><b>Actors:</b> Customer (User), Firebase Server, Camera Device</p>
+<p><b>Use Cases:</b> Browse Products, Filter by Category, Sort Products, View Product Details, View in AR, Add to Cart, Update Cart Quantity, Remove from Cart, Register Account, Login, Logout, Place Order, View Order History, Submit Contact Message.</p>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: INSERT YOUR USE CASE DIAGRAM HERE]
+</div>
+
+<!-- ==================== CHAPTER 5: SYSTEM DESCRIPTION ==================== -->
+<h1 class="page-break">5. SYSTEM DESCRIPTION (Modules)</h1>
+<p>The En'Decore platform consists of six key functional modules:</p>
+
+<h2>5.1 Home Page Module (index.html)</h2>
+<p>The home page serves as the primary entry point to the platform and includes:</p>
+<ul>
+    <li><b>Hero Section:</b> A full-viewport split-screen layout with brand tagline ("Where Craft Meets Vision"), call-to-action buttons, and a high-quality luxury interior image with a Ken Burns zoom effect on hover.</li>
+    <li><b>Category Strip:</b> A three-column image grid (Armchairs, Sofas, Tables) with hover animations linking to the products page.</li>
+    <li><b>Featured Products:</b> Dynamically rendered product cards showing Signature and curated pieces with images, ratings, prices, and AR quick-view buttons.</li>
+    <li><b>Latest Collection:</b> A second product row highlighting new arrivals with "New" badges.</li>
+    <li><b>Feature Banner:</b> An exclusive product spotlight (Luxury Grey Sofa) with a dark-themed full-width section.</li>
+    <li><b>Testimonials:</b> Client review cards with star ratings and author initials.</li>
+    <li><b>Footer:</b> Navigation links, social media icons, and brand tagline.</li>
+</ul>
+
+<h2>5.2 Product Catalog Module (products.html)</h2>
+<p>The collection page displays all available furniture products with:</p>
+<ul>
+    <li><b>Category Tabs:</b> Filter buttons for All, Armchairs, Sofas, and Tables.</li>
+    <li><b>Sort Dropdown:</b> Options for Default Sorting, Price Low-to-High, Price High-to-Low, and Name A–Z.</li>
+    <li><b>Product Cards:</b> Each card displays the product image, category label, name, star rating, price, "View Piece" overlay on hover, product badge (Signature/New/Exclusive), and AR quick-view button.</li>
+    <li>All 13 products are rendered dynamically using JavaScript arrays and template literals.</li>
+</ul>
+
+<h2>5.3 Product Detail Module (pd_*.html)</h2>
+<p>Each product has a dedicated detail page featuring:</p>
+<ul>
+    <li>Large product images with multiple views.</li>
+    <li>Product title, description, category, and price.</li>
+    <li><b>"View in AR" Button:</b> Launches the AR modal for virtual placement.</li>
+    <li><b>"Add to Cart" Button:</b> Adds the product to the user's Firebase cart.</li>
+    <li>Related product suggestions.</li>
+</ul>
+
+<h2>5.4 Shopping Cart Module (cart.html)</h2>
+<p>The cart page provides a complete shopping experience:</p>
+<ul>
+    <li><b>Cart Table:</b> Lists all added products with image, name, quantity controls (+/−), and line total.</li>
+    <li><b>Order Summary:</b> Displays Subtotal, GST at 18%, Complimentary Shipping, and Grand Total.</li>
+    <li><b>Empty Cart State:</b> Displays a styled empty state with a link to explore the collection.</li>
+    <li><b>Checkout Flow:</b> Requires sign-in → reveals shipping form → captures delivery details → places order to Firestore.</li>
+</ul>
+
+<h2>5.5 Account Module (account.html)</h2>
+<p>The account page handles user authentication and profile management:</p>
+<ul>
+    <li><b>Login Form:</b> Email and password sign-in using Firebase Authentication.</li>
+    <li><b>Registration Form:</b> Creates new user with name, email, and password; stores profile in Firestore.</li>
+    <li><b>Dashboard View:</b> Shown after login — displays welcome message, quick links to Cart, Order History, and user email.</li>
+    <li><b>Order History:</b> Fetches and displays all past orders from Firestore with order ID, items, status, and total.</li>
+    <li><b>Sign Out:</b> Logs the user out and returns to the authentication view.</li>
+</ul>
+
+<h2>5.6 Additional Pages</h2>
+<ul>
+    <li><b>About / Maison Page (about.html):</b> Brand story, company philosophy, and values.</li>
+    <li><b>Contact Page (contactus.html):</b> Contact form that saves messages to Firebase Firestore's 'messages' collection; also includes phone and email info.</li>
+    <li><b>Blog / Journal Page (blogs.html):</b> Grid layout for articles and content related to furniture and interior design.</li>
+    <li><b>FAQ Page (faq2.html):</b> Frequently asked questions about the platform, AR feature, shipping, and policies.</li>
+</ul>
+
+<!-- ==================== CHAPTER 6: TESTING AND IMPLEMENTATION ==================== -->
+<h1 class="page-break">6. TESTING AND IMPLEMENTATION</h1>
+
+<h2>6.1 Testing Strategy</h2>
+<p>Testing was performed at multiple levels to ensure the quality, reliability, and usability of the En'Decore platform.</p>
+
+<h3>6.1.1 Unit Testing</h3>
+<p>Individual functions and modules were tested independently:</p>
+<ul>
+    <li>Product rendering functions were verified for correct card generation.</li>
+    <li>Star rating function was tested for whole, half, and empty star outputs.</li>
+    <li>Cart arithmetic was validated: subtotal calculation, GST (18%), and total computation.</li>
+    <li>Firebase authentication functions were tested for successful login, registration, and error handling.</li>
+</ul>
+
+<h3>6.1.2 Integration Testing</h3>
+<p>Combined modules were tested for correct data flow:</p>
+<ul>
+    <li>Adding products to cart and verifying reflection on the cart page.</li>
+    <li>User login followed by cart access and order placement.</li>
+    <li>Contact form submission and verification in Firestore console.</li>
+    <li>Guest-cart to authenticated-cart migration on user registration.</li>
+</ul>
+
+<h3>6.1.3 Functionality Testing</h3>
+<table>
+    <tr><th>Test Case</th><th>Expected Result</th><th>Status</th></tr>
+    <tr><td>User Registration with valid data</td><td>Account created, user redirected to dashboard</td><td>✅ Pass</td></tr>
+    <tr><td>Login with valid credentials</td><td>Dashboard displayed with user name</td><td>✅ Pass</td></tr>
+    <tr><td>Login with wrong password</td><td>Error toast notification shown</td><td>✅ Pass</td></tr>
+    <tr><td>Add product to cart</td><td>Cart count updates, product appears in cart</td><td>✅ Pass</td></tr>
+    <tr><td>Update cart quantity</td><td>Line total and order summary update correctly</td><td>✅ Pass</td></tr>
+    <tr><td>Remove item from cart</td><td>Item removed, totals recalculated</td><td>✅ Pass</td></tr>
+    <tr><td>GST calculation (18%)</td><td>Tax = 18% of subtotal, total = subtotal + tax</td><td>✅ Pass</td></tr>
+    <tr><td>Place order (with shipping details)</td><td>Order saved to Firestore, cart cleared</td><td>✅ Pass</td></tr>
+    <tr><td>AR "View Piece" button</td><td>AR modal opens with camera feed</td><td>✅ Pass</td></tr>
+    <tr><td>Contact form submission</td><td>Message stored in Firestore 'messages' collection</td><td>✅ Pass</td></tr>
+    <tr><td>Product category filtering</td><td>Only products of selected category displayed</td><td>✅ Pass</td></tr>
+    <tr><td>Product sorting (price, name)</td><td>Products reordered correctly</td><td>✅ Pass</td></tr>
+</table>
+
+<h3>6.1.4 Cross-Browser Testing</h3>
+<table>
+    <tr><th>Browser</th><th>Version</th><th>Compatibility</th></tr>
+    <tr><td>Google Chrome</td><td>Latest</td><td>✅ Fully Compatible</td></tr>
+    <tr><td>Microsoft Edge</td><td>Latest</td><td>✅ Fully Compatible</td></tr>
+    <tr><td>Mozilla Firefox</td><td>Latest</td><td>✅ Compatible (minor CSS differences)</td></tr>
+    <tr><td>Safari</td><td>Latest</td><td>✅ Compatible</td></tr>
+</table>
+
+<h3>6.1.5 Performance Testing</h3>
+<ul>
+    <li>Page load times verified under 3 seconds on standard broadband.</li>
+    <li>Page-loader animation ensures visual feedback during initial load.</li>
+    <li>Lazy loading implemented for product images to optimize performance.</li>
+    <li>Fallback images configured for broken image links (onerror handler).</li>
+</ul>
+
+<h2>6.2 Implementation</h2>
+<p>The En'Decore platform was implemented in the following phases:</p>
+<ol>
+    <li><b>Phase 1 — Design System Setup:</b> Created the CSS design system with custom properties, luxury color palette, typography, and reusable component styles.</li>
+    <li><b>Phase 2 — Page Structure:</b> Built all HTML pages with semantic structure, navigation, and footer components.</li>
+    <li><b>Phase 3 — Firebase Integration:</b> Configured Firebase project, set up Authentication and Firestore, and created the firebase.js utility module with all helper functions.</li>
+    <li><b>Phase 4 — Dynamic Features:</b> Implemented JavaScript-driven product rendering, cart management, AR integration, and user authentication flows.</li>
+    <li><b>Phase 5 — AR Integration:</b> Integrated AR.js with custom CSS modal overlay and camera-based furniture visualization.</li>
+    <li><b>Phase 6 — Testing & Refinement:</b> Conducted thorough testing across devices and browsers, fixed bugs, and polished the user experience.</li>
+</ol>
+
+<!-- ==================== CHAPTER 7: CONCLUSION AND FUTURE SCOPE ==================== -->
+<h1 class="page-break">7. CONCLUSION AND FUTURE SCOPE</h1>
+
+<h2>7.1 Conclusion</h2>
+<p>The <b>En'Decore — AR Based E-Commerce Platform</b> has been successfully designed, developed, and tested as part of this MCA project. The platform demonstrates the effective integration of modern web technologies (HTML5, CSS3, JavaScript) with cloud services (Firebase) and cutting-edge Augmented Reality (AR.js) to create a premium online furniture shopping experience.</p>
+<p>Key achievements of the project include:</p>
+<ul>
+    <li>A fully functional AR-enabled e-commerce website with luxury aesthetics.</li>
+    <li>Complete user authentication and session management using Firebase.</li>
+    <li>Real-time shopping cart with dynamic pricing, GST calculation, and order placement.</li>
+    <li>A responsive, cross-browser design that works across desktops, tablets, and mobile devices.</li>
+    <li>A custom vanilla JavaScript architecture with no external framework dependencies, resulting in fast load times and lightweight performance.</li>
+</ul>
+<p>The project addresses a genuine gap in the online furniture market by enabling users to visualize products in their own space before purchasing, thus reducing return rates and improving customer satisfaction.</p>
+
+<h2>7.2 Future Scope</h2>
+<ul>
+    <li><b>Expanded 3D Product Catalog:</b> Continuously update and expand the collection of AR-ready 3D furniture models for a richer visualization experience.</li>
+    <li><b>Color & Material Customization:</b> Allow users to change furniture colors, fabrics, and finishes directly within the AR environment.</li>
+    <li><b>Real-Time Collaboration:</b> Enable multiple users to view and interact with the same AR environment simultaneously for joint decision-making.</li>
+    <li><b>AI-Powered Recommendations:</b> Implement machine learning algorithms to suggest furniture based on user preferences, browsing history, and room dimensions.</li>
+    <li><b>Payment Gateway Integration:</b> Integrate real payment systems (Razorpay, Stripe, UPI) for actual transaction processing.</li>
+    <li><b>Admin Dashboard:</b> Build an administrative panel for managing products, orders, inventory, and customer queries.</li>
+    <li><b>Push Notifications:</b> Implement Firebase Cloud Messaging for order status updates, promotions, and new arrival alerts.</li>
+    <li><b>Progressive Web App (PWA):</b> Convert the website to a PWA for offline access, faster loads, and installable mobile experience.</li>
+    <li><b>Multi-Language Support:</b> Add language localization for wider audience reach.</li>
+</ul>
+
+<!-- ==================== CHAPTER 8: FORMS AND REPORTS ==================== -->
+<h1 class="page-break">8. FORMS AND REPORTS (Screenshots)</h1>
+<p>Below are the captured screenshots of the developed En'Decore system demonstrating all key pages and functionalities.</p>
+
+<h3>8.1 Home Page (Hero Section)</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF INDEX.HTML — HERO SECTION]
+</div>
+
+<h3>8.2 Home Page (Category Strip & Featured Products)</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF INDEX.HTML — CATEGORIES & FEATURED PRODUCTS SECTION]
+</div>
+
+<h3>8.3 Home Page (Feature Banner & Testimonials)</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF INDEX.HTML — FEATURE BANNER & TESTIMONIALS]
+</div>
+
+<h3>8.4 Products / Collection Page</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF PRODUCTS.HTML WITH ALL PRODUCTS DISPLAYED]
+</div>
+
+<h3>8.5 Product Detail Page</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF ANY PRODUCT DETAIL PAGE (e.g., pd_luxury.html)]
+</div>
+
+<h3>8.6 AR View (Augmented Reality Modal)</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF AR VIEW IN ACTION WITH CAMERA FEED]
+</div>
+
+<h3>8.7 Shopping Cart Page (With Items)</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF CART.HTML WITH PRODUCTS AND ORDER SUMMARY]
+</div>
+
+<h3>8.8 Shopping Cart (Empty State)</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF CART.HTML WITH EMPTY CART MESSAGE]
+</div>
+
+<h3>8.9 Account Page (Login / Registration Form)</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF ACCOUNT.HTML — LOGIN & REGISTER FORMS]
+</div>
+
+<h3>8.10 Account Dashboard (After Login)</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF ACCOUNT.HTML — DASHBOARD VIEW WITH USER INFO]
+</div>
+
+<h3>8.11 Contact Us Page</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF CONTACTUS.HTML]
+</div>
+
+<h3>8.12 About / Maison Page</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF ABOUT.HTML]
+</div>
+
+<h3>8.13 Blog / Journal Page</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF BLOGS.HTML]
+</div>
+
+<h3>8.14 FAQ Page</h3>
+<div class="placeholder">
+    [IMAGE PLACEHOLDER: SCREENSHOT OF FAQ2.HTML]
+</div>
+
+<!-- ==================== CHAPTER 9: BIBLIOGRAPHY ==================== -->
+<h1 class="page-break">9. BIBLIOGRAPHY</h1>
+
+<h2>Books & Publications</h2>
+<ul>
+    <li>Jon Duckett, <i>"HTML & CSS: Design and Build Websites"</i>, John Wiley & Sons, 2011.</li>
+    <li>Jon Duckett, <i>"JavaScript and jQuery: Interactive Front-End Web Development"</i>, John Wiley & Sons, 2014.</li>
+    <li>David Flanagan, <i>"JavaScript: The Definitive Guide"</i>, O'Reilly Media, 7th Edition, 2020.</li>
+    <li>Ethan Marcotte, <i>"Responsive Web Design"</i>, A Book Apart, 2nd Edition, 2014.</li>
+</ul>
+
+<h2>Online Resources & Documentation</h2>
+<ul>
+    <li>Firebase Official Documentation — <a href="https://firebase.google.com/docs">https://firebase.google.com/docs</a></li>
+    <li>AR.js Documentation — <a href="https://ar-js-org.github.io/AR.js-Docs/">https://ar-js-org.github.io/AR.js-Docs/</a></li>
+    <li>MDN Web Docs (HTML, CSS, JavaScript) — <a href="https://developer.mozilla.org">https://developer.mozilla.org</a></li>
+    <li>W3Schools Online Web Tutorials — <a href="https://www.w3schools.com">https://www.w3schools.com</a></li>
+    <li>Google Fonts — <a href="https://fonts.google.com">https://fonts.google.com</a></li>
+    <li>Font Awesome Icons — <a href="https://fontawesome.com">https://fontawesome.com</a></li>
+    <li>Unsplash (Free Images) — <a href="https://unsplash.com">https://unsplash.com</a></li>
+    <li>CSS-Tricks — <a href="https://css-tricks.com">https://css-tricks.com</a></li>
+    <li>Stack Overflow — <a href="https://stackoverflow.com">https://stackoverflow.com</a></li>
+</ul>
+
+</body>
+</html>

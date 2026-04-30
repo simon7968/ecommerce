@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — En'Decore</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<div id="page-loader"><div class="loader-brand">En'<span>Decore</span></div><div class="loader-bar"></div></div>
+<div class="toast"></div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="navbar">
+    <div class="logo"><a href="index.html">En'<span>Decore</span></a></div>
+    <nav>
+      <ul id="MenuItems">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Collection</a></li>
+        <li><a href="about.html">Maison</a></li>
+        <li><a href="blogs.html">Journal</a></li>
+        <li><a href="contactus.html">Contact</a></li>
+        <li><a href="faq2.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <span class="user-welcome"></span>
+      <button class="nav-icon-btn" onclick="window.location='account.html'"><i class="fa-regular fa-user"></i></button>
+      <button class="nav-icon-btn" onclick="window.location='cart.html'">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-count" style="display:none">0</span>
+      </button>
+      <button class="nav-icon-btn menu-icon"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- Contact -->
+<section class="contact-section page-enter">
+  <div class="small-container">
+    <div style="text-align:center; margin-bottom:72px;">
+      <span class="section-eyebrow">Get In Touch</span>
+      <h1 style="font-family:var(--font-display); font-size:clamp(2.5rem,4vw,4rem); font-weight:300;">
+        We'd Love<br><em style="font-style:italic; color:var(--gold);">To Hear From You</em>
+      </h1>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Info Panel -->
+      <div class="contact-info">
+        <h2>En'Decore</h2>
+        <div class="contact-divider"></div>
+        <p style="font-size:0.8rem; color:rgba(248,245,240,0.5); line-height:1.9; margin-bottom:32px;">
+          Our client services team is available to assist you Monday through Saturday, 10am – 7pm IST.
+        </p>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div class="contact-item-text">
+            <div class="contact-item-label">Maison</div>
+            Anna Nagar, Chennai<br>Tamil Nadu – 600 040
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-regular fa-envelope"></i>
+          <div class="contact-item-text">
+            <div class="contact-item-label">Email</div>
+            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="600d0109130f0e20050e0405030f12054e090e">[email&#160;protected]</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <div class="contact-item-text">
+            <div class="contact-item-label">Phone</div>
+            +91 98765 43210
+          </div>
+        </div>
+
+        <div style="margin-top:40px; padding-top:32px; border-top:1px solid rgba(255,255,255,0.08);">
+          <p style="font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;">Follow</p>
+          <div style="display:flex; gap:12px;">
+            <a href="#" style="width:36px;height:36px;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:rgba(248,245,240,0.6);transition:0.3s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(248,245,240,0.6)'"><i class="fab fa-instagram" style="font-size:0.8rem;"></i></a>
+            <a href="#" style="width:36px;height:36px;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:rgba(248,245,240,0.6);transition:0.3s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(248,245,240,0.6)'"><i class="fab fa-facebook-f" style="font-size:0.8rem;"></i></a>
+            <a href="#" style="width:36px;height:36px;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:rgba(248,245,240,0.6);transition:0.3s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(248,245,240,0.6)'"><i class="fab fa-twitter" style="font-size:0.8rem;"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-wrap">
+        <h2>Send a Message</h2>
+        <div class="contact-form-row" style="margin-bottom:20px;">
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" id="cfFirstName" placeholder="First name" />
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-input" id="cfLastName" placeholder="Last name" />
+          </div>
+        </div>
+        <div class="contact-form-row" style="margin-bottom:20px;">
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" id="cfEmail" placeholder="your@email.com" />
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label">Phone (optional)</label>
+            <input type="tel" class="form-input" id="cfPhone" placeholder="+91 00000 00000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <select class="form-input" id="cfSubject" style="appearance:none; cursor:pointer;">
+            <option value="">Select topic</option>
+            <option>Product Enquiry</option>
+            <option>Order Status</option>
+            <option>Return & Refund</option>
+            <option>Interior Design Consultation</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Message</label>
+          <textarea class="form-input" id="cfMessage" rows="6" placeholder="How may we assist you?" style="resize:vertical; font-family:var(--font-body);"></textarea>
+        </div>
+        <button class="btn btn-filled contact-submit-btn" onclick="handleContactSubmit()">
+          Send Message &nbsp;<i class="fa-solid fa-paper-plane" style="font-size:0.7rem;"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">En'<span>Decore</span></div>
+        <p class="footer-desc">A maison of distinguished furniture crafted for refined living.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Collection</h4><ul><li><a href="products.html">All Pieces</a></li></ul></div>
+      <div class="footer-col"><h4>Maison</h4><ul><li><a href="about.html">Our Story</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="account.html">My Account</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 En'Decore. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="firebase.js"></script>
+<script>
+async function handleContactSubmit() {
+  const firstName = document.getElementById('cfFirstName').value.trim();
+  const lastName  = document.getElementById('cfLastName').value.trim();
+  const email     = document.getElementById('cfEmail').value.trim();
+  const phone     = document.getElementById('cfPhone').value.trim();
+  const message   = document.getElementById('cfMessage').value.trim();
+
+  if (!firstName || !email || !message) {
+    showToast('Please complete all required fields', 'error');
+    return;
+  }
+
+  await submitContactF
